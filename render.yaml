@@ -2,13 +2,13 @@ services:
   - type: web
     name: render-subnet-router
     env: docker
-    region: frankfurt
+    region: oregon
     plan: starter
     envVars:
       - key: TAILSCALE_AUTHKEY
         sync: false
       - key: TAILSCALE_VERSION
-        value: 1.26.1
+        value: 1.54.1
       - key: ADVERTISE_ROUTES
         value: 10.0.0.0/8
     disk:
