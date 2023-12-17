@@ -17,18 +17,18 @@ services:
       sizeGB: 1
 
   - type: web
-      name: render-subnet-router-oh
-      env: docker
-      region: ohio
-      plan: starter
-      envVars:
-        - key: TAILSCALE_AUTHKEY
-          sync: false
-        - key: TAILSCALE_VERSION
-          value: 1.56.0
-        - key: ADVERTISE_ROUTES
-          value: 10.0.0.0/8,100.0.0.0/8,::/0
-      disk:
-        name: tailscale-state-oh
-        mountPath: /var/lib/tailscale
-        sizeGB: 1
+    name: render-subnet-router-oh
+    env: docker
+    region: ohio
+    plan: starter
+    envVars:
+      - key: TAILSCALE_AUTHKEY
+        sync: false
+      - key: TAILSCALE_VERSION
+        value: 1.56.0
+      - key: ADVERTISE_ROUTES
+        value: 10.0.0.0/8,100.0.0.0/8,::/0
+    disk:
+      name: tailscale-state-oh
+      mountPath: /var/lib/tailscale
+      sizeGB: 1
