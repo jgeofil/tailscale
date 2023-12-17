@@ -4,7 +4,7 @@
 PID=$!
 
 ADVERTISE_ROUTES=${ADVERTISE_ROUTES:-10.0.0.0/8}
-until /render/tailscale up --authkey="${TAILSCALE_AUTHKEY}" --hostname="${RENDER_SERVICE_NAME}" --advertise-routes="$ADVERTISE_ROUTES" --advertise-exit-node --accept-routes --exit-node-allow-lan-access; do
+until /render/tailscale up --authkey="${TAILSCALE_AUTHKEY}" --hostname="${RENDER_SERVICE_NAME}" --advertise-routes="$ADVERTISE_ROUTES" --advertise-exit-node --accept-routes; do
   sleep 0.1
 done
 export ALL_PROXY=socks5://localhost:1055/
